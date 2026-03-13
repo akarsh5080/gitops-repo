@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/akarsh5080/service-nginx-repo
-  tag: latest
+  tag: 5dd5593c369fabaf19dbc37dd96087d6c1ab1947
 
 replicaCount: 1
 
