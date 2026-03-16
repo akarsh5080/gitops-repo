@@ -2,7 +2,7 @@ image:
   repository: ghcr.io/akarsh5080/app-repo
   tag: c62c2c4d162f72a880454e85582f7d3a4aa7cd84
 
-replicaCount: 1
+replicaCount: 2
 
 service:
   type: NodePort
