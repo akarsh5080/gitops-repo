@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/akarsh5080/app-repo
-  tag: latest
+  tag: 9b5e85977b2464dc22de7c9a94efc0a8b6cdfe98
 
 replicaCount: 1
 
