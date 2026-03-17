@@ -14,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: app-repo
+            name: app-repo-app-chart
             port:
               number: 80

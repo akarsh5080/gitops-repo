@@ -14,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: service-nginx-repo
+            name: service-nginx-repo-app-chart
             port:
               number: 80
