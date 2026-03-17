@@ -1,25 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: service-nginx-repo
+  name: root
   namespace: argocd
-
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/akarsh5080/gitops-repo.git
+    repoURL: https://github.com/akarsh5080/gitops-repo
     targetRevision: HEAD
-    path: environments/dev/apps/service-nginx-repo
-
-    helm:
-      valueFiles:
-        - ../../apps/service-nginx-repo/dev/values.yaml
-
+    path: argocd
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
-
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true

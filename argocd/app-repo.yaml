@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/akarsh5080/gitops-repo.git
     targetRevision: HEAD
-    path: charts/microservice
+    path: environments/dev/apps/app-repo
     helm:
       valueFiles:
         - ../../apps/app-repo/dev/values.yaml
