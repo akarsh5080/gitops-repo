@@ -10,11 +10,11 @@ spec:
   source:
     repoURL: https://github.com/akarsh5080/gitops-repo.git
     targetRevision: HEAD
-    path: environments/dev/apps/service-nginx-repo
+    path: charts/microservice
 
     helm:
       valueFiles:
-        - ../../apps/service-nginx-repo/dev/values.yaml
+        - ../../environments/dev/apps/service-nginx-repo/values.yaml
 
   destination:
     server: https://kubernetes.default.svc

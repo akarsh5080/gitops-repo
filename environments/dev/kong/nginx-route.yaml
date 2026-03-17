@@ -1,0 +1,19 @@
+# environments/dev/kong/nginx-route.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+  annotations:
+    konghq.com/strip-path: "true"
+spec:
+  ingressClassName: kong
+  rules:
+  - http:
+      paths:
+      - path: /nginx
+        pathType: Prefix
+        backend:
+          service:
+            name: service-nginx-repo
+            port:
+              number: 80

@@ -3,17 +3,19 @@ kind: Application
 metadata:
   name: app-repo
   namespace: argocd
-
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/akarsh5080/gitops-repo.git
+    repoURL: https://github.com/<your-org>/gitops-repo
     targetRevision: HEAD
-    path: environments/dev/apps/app-repo
+
+    # 🔥 THIS IS KEY
+    path: charts/microservice
+
     helm:
       valueFiles:
-        - ../../apps/app-repo/dev/values.yaml
+        - ../../environments/dev/apps/app-repo/values.yaml
 
   destination:
     server: https://kubernetes.default.svc

@@ -1,0 +1,19 @@
+# environments/dev/kong/app-repo-route.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-repo
+  annotations:
+    konghq.com/strip-path: "true"
+spec:
+  ingressClassName: kong
+  rules:
+  - http:
+      paths:
+      - path: /app
+        pathType: Prefix
+        backend:
+          service:
+            name: app-repo
+            port:
+              number: 80
