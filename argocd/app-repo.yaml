@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/<your-org>/gitops-repo
+    repoURL: https://github.com/akarsh5080/gitops-repo
     targetRevision: HEAD
 
     # 🔥 THIS IS KEY
