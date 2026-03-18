@@ -11,7 +11,7 @@ spec:
     chart: postgresql
     targetRevision: 15.5.0
 
-    helm:
+    helm:   # ✅ CORRECT PLACE
       values: |
         auth:
           username: admin
