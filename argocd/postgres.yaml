@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: postgresql
-    targetRevision: 15.5.0
+    targetRevision: 16.2.3
 
     helm:   # ✅ CORRECT PLACE
       values: |
