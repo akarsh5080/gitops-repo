@@ -7,13 +7,20 @@ spec:
   project: default
 
   source:
-    repoURL: https://charts.bitnami.com/bitnami   # 🔥 external helm repo
+    repoURL: https://charts.bitnami.com/bitnami
     chart: postgresql
     targetRevision: 15.5.0
 
     helm:
-      valueFiles:
-        - environments/dev/apps/postgres/values.yaml
+      values: |
+        auth:
+          username: admin
+          password: admin123
+          database: mydb
+        primary:
+          persistence:
+            enabled: true
+            size: 1Gi
 
   destination:
     server: https://kubernetes.default.svc
