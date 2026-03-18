@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "app-chart.fullname" . }}
+spec:
+  clusterIP: None   # 🔥 THIS MAKES IT STATEFUL
+  selector:
+    app: {{ include "app-chart.name" . }}
+  ports:
+  - port: 80
+    targetPort: 80
