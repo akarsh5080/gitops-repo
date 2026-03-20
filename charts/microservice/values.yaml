@@ -163,3 +163,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+statefullset:
+  enabled: false
