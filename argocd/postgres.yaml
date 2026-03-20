@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: postgres
   namespace: argocd
+
 spec:
   project: default
 
@@ -11,12 +12,21 @@ spec:
     chart: postgresql
     targetRevision: 16.2.3
 
-    helm:   # ✅ CORRECT PLACE
+    helm:   # ✅ MUST be inside source
       values: |
+       image:
+         registry: docker.io
+         repository: bitnami/postgresql
+         tag: 16.2.0-debian-12-r0   # ✅ VALID EXISTING TAG
+
+       global:
+         imageRegistry: docker.io
+
         auth:
           username: admin
           password: admin123
           database: mydb
+
         primary:
           persistence:
             enabled: true
